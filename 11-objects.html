@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>11-Objects</title>
+		<meta name="description" content="11-Objects">
+		<meta name="author" content="OferR">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>11 - Objects</h1>
+			</header>
+
+			<div>
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by OferR
+				</p>
+			</footer>
+		</div>
+		<script>
+		/* Exc  1   */
+			var ofer = {
+				name 	: "Ofer",
+				height 	: "185",
+				eyeColor: "blue",
+				isIsrael: null,
+				town	: null,
+				lang :{
+					isHeb 	: true,
+					isEng	: true,
+					isRus	: false
+				}
+			}
+			console.log("Exc 1");
+			console.log("My name = "+ofer.name);
+			console.log("My height = "+ofer.height);
+			console.log("Eye color = "+ofer.eyeColor);
+		/* Exc  2    */
+			ofer.eyeColor = "Brown";
+			console.log("Exc 2");
+			console.log("Sit near me Eye color = "+ofer.eyeColor);
+		/* Exc  3   */
+			ofer.isIsrael = true;
+			ofer.tone = "Kfar Maimon";
+		 	console.log("Exc 3");
+		 	console.log("live in Israel = "+ofer.isIsrael);
+		 	console.log("My tone = "+ofer.tone);
+		/* Exc  4   */
+		 	ofer.lang.isHeb = true;
+		 	ofer.lang.isEng = true;
+		 	ofer.lang.isRus = false;
+		 	console.log("Exc  4");
+		 	console.log("Typof isHeb = "+typeof ofer.lang.isHeb);
+		</script>
+	</body>
+</html>
