@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>20-if</title>
+		<meta name="description" content="">
+		<meta name="author" content="OferR">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>20-if</h1>
+			</header>
+		</div>
+		<script>
+			var x = 3;
+			var y = -7;
+			var z = 2;
+			var output = [x,y,z]
+// exc 1
+			console.log("Exc - 1")
+			if (x>y){
+				console.log(x);
+				}
+				else {
+					console.log(y);
+					}
+// exc 2
+			console.log("Exc - 2");
+			if (x+y+z < 0){
+				console.log("The sign is -")
+			}
+			else{
+				console.log("The sign is +")
+			}
+// exc 3
+			x = 0;
+			y = -1;
+			z = 4;
+			if (x > y && x > z){
+				if (y > z){
+				output[0] = x;
+				output[1] = y;
+				output[2] = z;
+				}
+				else {
+				output[0] = x;
+				output[1] = z;
+				output[2] = y;
+				}
+			}
+			else if (y > x && y > z){
+				if (x > z){
+				output[0] = y;
+				output[1] = x;
+				output[2] = z;
+				}	
+				else {
+				output[0] = y;
+				output[1] = z;
+				output[2] = y;
+				}
+			}
+			else {
+				if (y > x){
+				output[0] = z;
+				output[1] = y;
+				output[2] = x;
+				}
+				else {
+				output[0] = z;
+				output[1] = x;
+				output[2] = y;						
+				}
+				}			
+			console.log("Exc 3");
+			console.log(output)	;
+// exc 4
+			output = [-5,-2,-6,0,-1];
+			x = output[0];
+			if (x < output[1]){
+				x = output[1];
+			}
+			if (x < output[2]){
+				x = output[2];
+			}
+			if (x < output[3]){
+				x = output[3];
+			}
+			if (x < output[4]){
+				x = output[4];
+			}
+			console.log("Max of " , output ," = ", x)	;
+		</script>
+	</body>
+</html>
