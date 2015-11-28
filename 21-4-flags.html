@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>HTML</title>
+		<meta name="description" content="">
+		<meta name="author" content="OferR">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<style>
+			body {
+				direction: rtl;
+				background: black;
+			}
+			.nrmlImg {
+				width: 250px;
+				margin: 20px;
+				position: relative;
+			}
+			.bigImg {
+				width: 500px;
+			}
+			.container {
+				position: relative;
+				display: inline-block;
+			}
+			span {
+				position: absolute;
+				top: 39%;
+				right: 27%;
+				font-size: 48px;
+				color: black;
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>Fleg onmouseover</h1>
+			</header>
+		</div>
+		<div>
+			<div class="container">
+				<img onmouseover="bigImg(this)" onmouseout="nrmlImg(this)" class="nrmlImg" src="http://flagpedia.net/data/flags/ultra/il.png" />
+				<span>ישראל</span>
+			</div>
+			<div class="container">
+				<img onmouseover="bigImg(this)" onmouseout="nrmlImg(this)" class="nrmlImg" src="http://flagpedia.net/data/flags/ultra/us.png" />
+				<span>ארה"ב"</span>
+			</div>
+			<div class="container">
+				<img onmouseover="bigImg(this)" onmouseout="nrmlImg(this)" class="nrmlImg" src="http://flagpedia.net/data/flags/ultra/it.png" />
+				<span>איטליה</span>
+			</div>
+			<div class="container">
+				<img onmouseover="bigImg(this)" onmouseout="nrmlImg(this)" class="nrmlImg" src="http://flagpedia.net/data/flags/ultra/nl.png" />
+				<span>הולנד</span>
+			</div>
+			<div class="container">
+				<img onmouseover="bigImg(this)" onmouseout="nrmlImg(this)" class="nrmlImg" src="http://flagpedia.net/data/flags/ultra/fr.png" />
+				<span>צרפת</span>
+			</div>
+		</div>
+		<script>
+			function bigImg(x) {
+				x.className = "bigImg";
+				x.style.display = "block"
+				
+			}
+
+			function nrmlImg(x) {
+				x.className = "nrmlImg";
+			}
+		</script>
+	</body>
+</html>
