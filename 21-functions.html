@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Function</title>
+		<meta name="description" content="">
+		<meta name="author" content="OferR">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			body {
+				direction: rtl;
+				text-align: right;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="container">
+			<header>
+				<h1>Functions</h1>
+			</header>
+
+			<h2> תרגיל 1</h2>
+
+			<div id="inputs">
+				<P>
+					<input id="inp1" type="number" placeholder="הכנס מספר ראשון" />
+				</p>
+				<p>
+					<input id="inp2" type="number" placeholder="הכנס מספר שני" />
+				</p>
+				<p>
+					<button id="calc2n" onclick="calc2n()">
+						מחשב את הגדול מבין שתי המספרים הארשונים
+					</button>
+				</p>
+			</div>
+
+			<h2>תוספת לתרגיל 2</h2>
+
+			<div>
+				<p>
+					<input id="inp3" type="number" placeholder="הכנס מספר שלישי" />
+				</p>
+				<p>
+					<button id="sort" onclick="sort()">
+						לחץ למיון שלושת המספרים
+					</button>
+				</p>
+			</div>
+
+			<div id="result"></div>
+
+			<hr />
+
+			<h2>תרגיל 3</h2>
+
+			<p>
+				<input id="word" type="text" placeholder="הכנס מילה" />
+			</p>
+			<p>
+				<input id="letter" type="text" placeholder="הכנס אות לחיפוש במילה" />
+			</p>
+			<p>
+				<button id="nLatter" onclick="nLtr()">חשב כמות אותיות במילה</button>
+			</p>
+			<p id="numLetter"></P>
+		</div>
+		<script>
+		
+// תרגיל 1
+			function calc2n() {
+				var n1 = parseInt(document.getElementById("inp1").value);
+				var n2 = parseInt(document.getElementById("inp2").value);
+				if ((n1) > (n2)) {
+					alert(n1 + ' גדול מ - ' + n2);
+				} else if (n1 === n2) {
+					alert(n1 + ' שווה ל - ' + n2);
+				} else {
+					alert(n2 + ' גדול מ - ' + n1);
+				}
+			};
+			
+// תרגיל 2
+			function sort() {
+				var n1 = parseInt(document.getElementById("inp1").value);
+				var n2 = parseInt(document.getElementById("inp2").value);
+				var n3 = parseInt(document.getElementById("inp3").value);
+				var z = document.getElementById("result");
+				var x1,
+				    x2,
+				    x3;
+				var y1 = n1 - n2;
+				var y2 = n1 - n3;
+				if (y1 > 0 && y2 > 0) {
+					x1 = n1;
+					if (y1 > y2) {
+						x2 = n3;
+						x3 = n2;
+					} else {
+						x2 = n2;
+						x3 = n3;
+					}
+				} else if (y1 < 0 && y2 < 0) {
+					x3 = n1;
+					if (y1 > y2) {
+						x1 = n3;
+						x2 = n2;
+					} else {
+						x1 = n2;
+						x2 = n3;
+					}
+
+				} else {
+					x2 = n1;
+					if (y1 > y2) {
+						x1 = n2;
+						x3 = n3;
+					} else {
+						x1 = n3;
+						x3 = n2;
+					}
+				}
+				z.innerHTML = x1 + "  " + x2 + "  " + x3;
+			};
+// תרגיל 3
+			function nLtr() {
+				var word = document.getElementById("word").value;
+				var letter = document.getElementById("letter").value;
+				var serchLetter = word.split("");
+				var counter = 0;
+				for (var i=0; i < serchLetter.length; i++) {
+					if (serchLetter[i] === letter) {
+						counter += 1;
+					}
+				}
+				document.getElementById("numLetter").innerHTML = counter;	
+			}
+		</script>
+	</body>
+</html>
